@@ -1,4 +1,6 @@
-const removeFromArray = function() {
+const removeFromArray = function(userArray,indexToDelete) {
+    userArray.splice(indexToDelete-1,1);
+    return userArray;
 
 };
 
