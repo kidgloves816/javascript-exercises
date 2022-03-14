@@ -1,13 +1,16 @@
-const removeFromArray = function(userArray,indexToDelete) {
-    let i = 1;
-    while (i < arguments.length) {
-        if (arguments[i] <= userArray.length && !isNaN(arguments[i])){
-            indexToDelete = arguments[i];
-            userArray.splice(indexToDelete-1,1,null);
+const removeFromArray = function(userArray,...theArgs) {
+    let itemsToDelete = Array.from(theArgs);
+    
+    for (deleteItem of theArgs) {
+        if (typeof deleteItem === 'string') {
+            //code for string
         }
-        i++;
+
+        else if (typeof deleteItem === 'number') {
+            //code for integer
+        }
+
     }
-    return userArray.filter(Boolean);
 };
 
 // Do not edit below this line
