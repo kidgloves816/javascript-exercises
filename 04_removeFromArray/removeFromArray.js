@@ -3,14 +3,23 @@ const removeFromArray = function(userArray,...theArgs) {
     
     for (deleteItem of theArgs) {
         if (typeof deleteItem === 'string') {
-            //code for string
+            if (userArray.indexOf(deleteItem) === -1) continue;
+            
+            else {
+                userArray.splice(userArray.indexOf(deleteItem),1,null);
+            }
         }
 
         else if (typeof deleteItem === 'number') {
-            //code for integer
+            if (deleteItem <= userArray.length) {
+                userArray.splice(deleteItem-1,1,null)
+            }
+            else continue;
         }
 
     }
+
+    return userArray.filter(Boolean);
 };
 
 // Do not edit below this line
